@@ -47,7 +47,7 @@ button {
     padding: 10px 20px; /* Agrega espacio de relleno dentro de los botones */
     margin: 10px; /* Define el margen alrededor de los botones */
     background-color: #ffc400; /* Define el color de fondo de los botones */
-    color: white; /* Define el color del texto en los botones */
+    color: black; /* Define el color del texto en los botones */
     border: none; /* Quita el borde de los botones */
     border-radius: 5px; /* Establece los bordes redondeados de los botones */
     cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
