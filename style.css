@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+/* Reset de estilos para asegurar consistencia entre navegadores */
+* {
+    margin: 0; /* Establece el margen a 0 */
+    padding: 0; /* Establece el relleno a 0 */
+    box-sizing: border-box; /* Hace que el tamaño total de los elementos incluya el relleno y el borde, pero no los márgenes */
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: "Cutive Mono", monospace;
+    font-weight: 400;/* Define la fuente de todo el texto en el cuerpo */
+    background-color: #f0f0f0; /* Establece el color de fondo */
+    display: grid; /* Usa el modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    height: 100%; /* Establece la altura al 100% del viewport */
+    margin: 10px; /* Establece el margen a 10px en todas las direcciones */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    background-color: white; /* Define el color de fondo del contenedor */
+    padding: 20px; /* Agrega espacio de relleno alrededor del contenido */
+    border-radius: 8px; /* Establece los bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra al contenedor */
+    text-align: center; /* Centra el texto en el contenedor */
+    max-width: 400px; /* Establece el ancho máximo del contenedor */
+    width: 100%; /* Establece el ancho al 100% del contenedor padre */
+}
+
+/* Estilos para los encabezados */
+h1 {
+    margin-bottom: 20px; /* Agrega espacio inferior entre los encabezados y otros elementos */
+}
+
+/* Estilos para los elementos de entrada */
+input {
+    width: 100px; /* Define el ancho de los elementos de entrada */
+    padding: 10px; /* Agrega espacio de relleno dentro de los elementos de entrada */
+    margin-bottom: 20px; /* Agrega espacio inferior entre los elementos de entrada y otros elementos */
+}
+
+/* Estilos para los botones */
+button {
+    font-family: "Cutive Mono", monospace;
+    padding: 10px 20px; /* Agrega espacio de relleno dentro de los botones */
+    margin: 10px; /* Define el margen alrededor de los botones */
+    background-color: #ffc400; /* Define el color de fondo de los botones */
+    color: white; /* Define el color del texto en los botones */
+    border: none; /* Quita el borde de los botones */
+    border-radius: 5px; /* Establece los bordes redondeados de los botones */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
+}
+
+/* Estilos para los botones al pasar el cursor sobre ellos */
+button:hover {
+    background-color: #b38600; /* Cambia el color de fondo al pasar el cursor sobre los botones */
+}
+
+/* Estilos para elementos ocultos */
+.hidden {
+    display: none; /* Oculta los elementos estableciendo su visualización como "none" */
+}
+
+/* Estilos para los párrafos */
+p {
+    margin: 10px 0; /* Agrega espacio alrededor de los párrafos */
+}
+
+/* Estilos para elementos completados */
+.complete {
+    border: 2px solid green; /* Define un borde sólido alrededor de los elementos completados */
+    padding: 10px; /* Agrega espacio de relleno alrededor de los elementos completados */
+    border-radius: 5px; /* Establece los bordes redondeados de los elementos completados */
+    color: green; /* Define el color del texto para los elementos completados */
+}
+
+/* Estilos para el contenedor de código */
+.code-container {
+    background-color: #f9f9f9; /* Define el color de fondo del contenedor de código */
+    border-radius: 8px; /* Establece los bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra al contenedor */
+    padding: 10px; /* Agrega espacio de relleno dentro del contenedor de código */
+    margin-top: 20px; /* Agrega espacio superior al contenedor de código */
+    max-width: 400px; /* Establece el ancho máximo del contenedor de código */
+    max-height: 600px; /* Establece la altura máxima del contenedor de código */
+    overflow: auto; /* Agrega una barra de desplazamiento si el contenido es demasiado largo */
+    position: relative; /* Establece la posición del contenedor de código */
+}
+/* Estilos para los controles de código */
+.code-controls {
+    font-size: 14px; /* Establece el tamaño del texto a 14px */
+    text-align: center; /* Centra el contenido horizontalmente */
+    position: relative; /* Mantiene fijo el contenido */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    z-index: 1; /* Asegura que esté encima del contenido desplazable */
+}
+
+/* Estilos para el contenedor de código */
+#javaCode {
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    max-height: 400px; /* Establece una altura máxima */
+    padding-top: 50px; /* Ajusta el espacio superior para evitar la superposición con code-controls */
+}
+
+/* Estilos para los controles de código */
+.code-actions {
+    position: absolute; /* Establece la posición absoluta para los controles de código */
+    top: 5px; /* Define la posición superior de los controles de código */
+    right: 5px; /* Define la posición derecha de los controles de código */
+}
+

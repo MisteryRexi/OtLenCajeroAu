@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cajero automático</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Estacionamiento Aeropuerto Internacional Los Ángeles</h1>
+        <p>¿Cuántas horas se utilizó el estacionamiento?</p>
+        <input type="number" id="horas" min="1" max="999">
+        <button onclick="calcularCosto()">Calcular Costo</button>
+        <p id="costo" class="hidden"></p>
+        <p id="deuda" class="hidden"></p>
+        <p id="pago" class="hidden"></p>
+        <div id="opciones-pago" class="hidden">
+            <p>Elige una opción para tu forma de pago:</p>
+            <button onclick="pagar(100)">$100</button>
+            <button onclick="pagar(50)">$50</button>
+            <button onclick="pagar(20)">$20</button>
+            <button onclick="pagar(10)">$10</button>
+            <button onclick="pagar(5)">$5</button>
+            <button onclick="pagar(2)">$2</button>
+            <button onclick="pagar(1)">$1</button>
+        </div>
+        <p id="cambio" class="hidden"></p>
+        <button id="reiniciar" class="hidden" onclick="reiniciarProceso()">Reiniciar</button>
+    </div>
+
+    <div class="code-container">
+        <div class="code-controls">
+            <h2>Código en Java</h2>
+            <p>Este código se realizó originalmente en Java, se adapto a HTML para una ejecución mas cómoda.</p>
+            <button onclick="toggleJavaCode()">Código Java</button>
+            <button onclick="copyCode()">Copiar Código</button>
+        </div>
+    
+        <pre id="javaCode" class="hidden"><code>
+            // Código en Java
+    
+            import java.util.Scanner;
+    
+            public class CajeroAutomatico {
+                int moneda10 =0;
+                int moneda5 =0;
+                int moneda2 =0;
+                int moneda1 =0;
+                int costo =0;
+                int opcion =0;
+                int pago =0;
+                int cambio =0;
+                int horas =0;
+                String variable = null;
+    
+                public void run(){
+                    Scanner scanner =new Scanner(System.in);
+    
+                    while(true){
+                        costo =0;
+                        horas =0;
+                        System.out.println("Estacionamiento Internacional Los Ángeles");
+                        System.out.println("¿Cuántas horas se utilizo el estacionamiento?");
+                        horas = scanner.nextInt();
+                        costo = horas*17;
+    
+                        if(costo > 999){
+                            costo = 999;
+                        }
+                        pago =0;
+                        opcion =0;
+                        while(!(pago >= costo)){
+                            System.out.println("Debes: $" + (costo - pago));
+                            System.out.println("Elije una opción para tu forma de pago:");
+                            System.out.println("1)$100 | 2)$50 | 3)$20 | 4)$10 | 5)$5 | 6)$2 | 7)$1");
+                            opcion = scanner.nextInt();
+                            if(opcion == 1){
+                                pago = pago + 100;
+                            }
+                            if(opcion == 2){
+                                pago = pago + 50;
+                            }
+                            if(opcion == 3){
+                                pago = pago + 20;
+                            }
+                            if(opcion == 4){
+                                pago = pago + 10;
+                            }
+                            if(opcion == 5){
+                                pago = pago + 5;
+                            }
+                            if(opcion == 6){
+                                pago = pago + 2;
+                            }
+                            if(opcion == 7){
+                                pago = pago + 1;
+                            }
+                            cambio =0;
+                            moneda10 =0;
+                            moneda5 =0;
+                            moneda2= 0;
+                            moneda1 =0;
+                            cambio = pago - costo;
+                            if(cambio > 0){
+                                moneda10 = (cambio / 10);
+                                cambio = cambio % 10;
+                            }
+                            if(cambio > 0){
+                                moneda5 = (cambio / 5);
+                                cambio = cambio % 5;
+                            }
+                            if(cambio > 0){
+                                moneda2 = (cambio / 2);
+                                cambio = cambio % 2;
+                            }
+                            if(cambio > 0){
+                                moneda1 = (cambio / 1);
+                                cambio = cambio % 1;
+                            }
+                        }
+                        System.out.println("Cambio a recibir: ");
+                        System.out.println(moneda10 + " moneda(s) de 10");
+                        System.out.println(moneda5 + " moneda(s) de 5");
+                        System.out.println(moneda2 + " moneda(s) de 2");
+                        System.out.println(moneda1 + " moneda(s) de 1");
+                        System.out.println("El cambio total es: " + cambio);
+                    }
+                }
+    
+                public static void main(String[] args) throws Exception {
+                    CajeroAutomatico cajeroautomatico = new CajeroAutomatico();
+                    cajeroautomatico.run();
+                }
+            }
+            </code></pre>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
